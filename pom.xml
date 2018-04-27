@@ -60,6 +60,7 @@
 		<module>ms-solr</module>
 		<module>ms-webSocket</module>
 		<module>ms-core</module>
+		<module>ms-coder</module>
 	</modules>
 	<!-- 模块引入 end -->
 
