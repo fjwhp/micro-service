@@ -60,6 +60,7 @@
 		<module>ms-webSocket</module>
 		<module>ms-core</module>
 		<module>ms-web</module>
+		<module>ms-coder</module>
 	</modules>
 	<!-- 模块引入 end -->
 
