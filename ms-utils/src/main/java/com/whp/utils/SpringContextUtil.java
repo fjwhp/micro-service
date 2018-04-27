@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
  * 
  * @描述：spring上下文工具类
  *
- * @作者：zhongjy
+ * @作者：whp
  *
  * @时间：2017年4月29日 上午8:45:02
  */
@@ -19,7 +19,7 @@ public class SpringContextUtil {
    *
    * @返回：ApplicationContext
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年4月29日 上午8:44:54
    */
@@ -33,7 +33,7 @@ public class SpringContextUtil {
    *
    * @返回：void
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年4月29日 上午8:45:37
    */
@@ -47,7 +47,7 @@ public class SpringContextUtil {
    *
    * @返回：Object
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年4月29日 上午8:45:53
    */
@@ -61,7 +61,7 @@ public class SpringContextUtil {
    *
    * @返回：Object
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年4月29日 上午8:46:05
    */

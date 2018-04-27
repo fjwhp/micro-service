@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @描述：文件工具类
  *
- * @作者：zhongjy
+ * @作者：whp
  * 
  * @时间：2017年7月6日 上午10:28:29
  */
@@ -32,7 +32,7 @@ public class FileUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年7月6日 上午10:36:23
    */
@@ -69,7 +69,7 @@ public class FileUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年7月6日 上午10:34:54
    */

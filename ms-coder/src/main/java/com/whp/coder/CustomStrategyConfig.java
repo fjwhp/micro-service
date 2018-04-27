@@ -4,11 +4,11 @@ import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 
 /**
  * 
- * 自定义代码生成策略器(重写其中的includeSuperEntityColumns方法).
+ * @描述：自定义代码生成策略器(重写其中的includeSuperEntityColumns方法).
  *
- * @author：zhongjy
- *
- * @date：2017年5月21日 上午11:22:59
+ * @作者：whp
+ * 
+ * @时间：2018年4月27日 下午8:22:53
  */
 public class CustomStrategyConfig extends StrategyConfig {
 

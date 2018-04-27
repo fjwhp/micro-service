@@ -56,7 +56,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:43:25
    */
@@ -70,7 +70,7 @@ public class EncryptUtil {
    *
    * @返回：boolean
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:44:26
    */
@@ -84,7 +84,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:44:35
    */
@@ -103,7 +103,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:44:44
    */
@@ -124,7 +124,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:45:04
    */
@@ -156,7 +156,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:45:53
    */
@@ -188,7 +188,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:46:12
    */
@@ -223,7 +223,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:46:34
    */
@@ -246,7 +246,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:48:57
    */
@@ -270,7 +270,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年5月3日 下午10:46:55
    */
@@ -292,7 +292,7 @@ public class EncryptUtil {
    *
    * @返回：Map<String,Object>
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年7月25日 上午9:19:25
    */
@@ -322,7 +322,7 @@ public class EncryptUtil {
    *
    * @返回：PublicKey
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年7月25日 上午10:55:52
    */
@@ -344,7 +344,7 @@ public class EncryptUtil {
    *
    * @返回：PrivateKey
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年7月25日 上午10:58:24
    */
@@ -366,7 +366,7 @@ public class EncryptUtil {
    *
    * @返回：byte[]
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年7月25日 上午11:02:33
    */
@@ -390,7 +390,7 @@ public class EncryptUtil {
    *
    * @返回：String
    *
-   * @作者：zhongjy
+   * @作者：whp
    *
    * @时间：2017年7月25日 上午11:03:49
    */
@@ -436,7 +436,7 @@ public class EncryptUtil {
     System.out.println("RSA密文: " + encodedText); // 解密 PrivateKey
     System.out.println("RSA明文: " + decryptRSA(sy, encodedText));
     /*
-     * System.out.println("DES加密zhongjy：" + encryptDES("zhongjy", "1!2Q3A4Z5@6W7S8X9#0E11D12C"));
+     * System.out.println("DES加密whp：" + encryptDES("whp", "1!2Q3A4Z5@6W7S8X9#0E11D12C"));
      * System.out .println("DES加密zhongjianyu：" + encryptDES("zhongjianyu",
      * "1!2Q3A4Z5@6W7S8X9#0E11D12C"));
      * 
@@ -450,7 +450,7 @@ public class EncryptUtil {
      * 
      */
 
-    // System.out.println("DES加密zhongjy：" + encryptDES("admin", "1!2Q3A4Z5@6W7S8X9#0E11D12C"));
+    // System.out.println("DES加密whp：" + encryptDES("admin", "1!2Q3A4Z5@6W7S8X9#0E11D12C"));
     // System.out.println("DES加密zhongjianyu：" + encryptDES("123456", "1!2Q3A4Z5@6W7S8X9#0E11D12C"));
     // System.out.println(decryptDES("5148382b526b457872476f3d", "1!2Q3A4Z5@6W7S8X9#0E11D12C"));
   }
