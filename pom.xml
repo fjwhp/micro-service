@@ -46,6 +46,8 @@
 		<org.apache.pdfbox.pdfbox.version>1.8.13</org.apache.pdfbox.pdfbox.version>
 		<org.apache.xmlbeans.xmlbeans.version>2.6.0</org.apache.xmlbeans.xmlbeans.version>
 		<org.projectlombok.lombok-maven.version>1.12.6.0</org.projectlombok.lombok-maven.version>
+		<com.baomidou.mybatis-plus.version>2.2.0</com.baomidou.mybatis-plus.version>
+		<org.apache.velocity.version>1.7</org.apache.velocity.version>
 	</properties>
 	<!-- 模块引入 start -->
 	<modules>
@@ -74,14 +76,11 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!-- javabean 生产setter getter工具 -->
-			<!-- <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok-maven</artifactId> 
-				<type>pom</type> <scope>provided</scope> <version>${org.projectlombok.lombok-maven.version}</version> 
-				</dependency> -->
+			<!-- mybatis-plus -->
 			<dependency>
-				<groupId>ms.org.projectlombok</groupId>
-				<artifactId>lombok-maven</artifactId>
-				<version>5.1.0.5.1</version>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus</artifactId>
+				<version>${com.baomidou.mybatis-plus.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.springfox</groupId>
@@ -170,6 +169,12 @@
 				<artifactId>lombok</artifactId>
 				<version>${org.projectlombok.lombok-maven.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.apache.velocity</groupId>
+				<artifactId>velocity</artifactId>
+				<version>${org.apache.velocity.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 	<build>
