@@ -1,4 +1,4 @@
-package com.whp.model.dao.entity;
+package com.whp.user.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -7,6 +7,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
@@ -29,22 +32,24 @@ private static final long serialVersionUID = 1L;
     /**
      * 部门id
      */
-	@Column(name="dept_id",columnDefinition="部门id")
+	@Column(name="dept_id")
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long deptId;
     /**
      * 部门名称
      */
-	@Column(name="dept_name11",columnDefinition="部门名称")
+	@Column(name="dept_name11")
 	private String deptName11;
-	@Column(name="smallint",columnDefinition="")
-	private Integer smallint;
-	@Column(name="sdssss",columnDefinition="")
+	@Column(name="samill")
+	private Integer samill;
+	@Column(name="sdssss")
 	private Double sdssss;
-	@Column(name="ddd",columnDefinition="")
+	@Column(name="ddd")
 	private BigDecimal ddd;
-	@Column(name="ttt",columnDefinition="")
+	@Column(name="ttt")
 	private Date ttt;
-	@Column(name="bb",columnDefinition="")
+	@Column(name="bb")
 	private Blob bb;
 
 
@@ -66,12 +71,12 @@ private static final long serialVersionUID = 1L;
 		return this;
 	}
 
-	public Integer getSmallint() {
-		return smallint;
+	public Integer getSamill() {
+		return samill;
 	}
 
-	public TDept setSmallint(Integer smallint) {
-		this.smallint = smallint;
+	public TDept setSamill(Integer samill) {
+		this.samill = samill;
 		return this;
 	}
 

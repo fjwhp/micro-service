@@ -43,13 +43,14 @@ private static final long serialVersionUID = 1L;
      * ${field.comment}
      */
 #end
-	@Column(name="${field.name}",columnDefinition="${field.comment}")
+	@Column(name="${field.name}")
 #if(${field.keyFlag})
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 #if(${field.keyIdentityFlag})
 	
 #elseif(${field.convert})
-    @Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    
 #end
 #elseif(${field.convert})
 #end
