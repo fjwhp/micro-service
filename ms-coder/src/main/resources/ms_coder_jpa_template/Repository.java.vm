@@ -1,0 +1,16 @@
+package ${package.Mapper};
+
+import ${package.Entity}.${entity};
+
+/**
+ * 
+ * @描述：${table.comment}(dao接口).
+ * 
+ * @作者：${author}
+ * 
+ * @时间: ${date}
+ */
+public interface ${table.mapperName} extends JpaRepository<${entity}, Long> {
+
+
+}

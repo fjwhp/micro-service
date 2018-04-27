@@ -23,11 +23,12 @@ public class MpGenerator {
     public static final String PATH = "E:/developer/coder"; // 代码生成位置
 
     public static final String DB_IP = "111.230.198.11"; // 数据库地址
-    public static final String DB_database = "test-jpa"; // 数据库名称
+    public static final String DB_database = "ms-db-primary"; // 数据库名称
     public static final String DB_userName = "root";
     public static final String DB_pwd = "1qaz@WSX";
-    public static final String table_names = "t_dept";
-
+    public static final String table_names = "core_user";
+    public static final String module_name ="core";
+    
     public static void main(String[] args) throws Exception {
         /**
          * 生成 mybatis模板文件
@@ -46,7 +47,7 @@ public class MpGenerator {
 
     public static void makeCode_mybatis() {
         // 模块名
-        String moduleName = "solr";
+        String moduleName = module_name;
         // 表名
         String[] tableName = new String[] {table_names};
         // String[] tableName = new String[] { "aut_user" };
@@ -63,7 +64,7 @@ public class MpGenerator {
         gc.setOpen(true);
         gc.setAuthor("wuhp");
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
-        // gc.setMapperName("%sDao");
+         gc.setMapperName("%sDao");
         // gc.setXmlName("%sDao");
         gc.setServiceName("%sService");
         // gc.setServiceImplName("%sServiceDiy");
@@ -94,7 +95,7 @@ public class MpGenerator {
         strategy.setSuperEntityColumns(new String[] {"id", "create_time", "last_update_time", "version", "is_delete",
             "last_update_user_id", "last_update_user_name", "create_user_id", "create_user_name"});
         // 自定义 mapper 父类
-        // strategy.setSuperMapperClass("com.baomidou.demo.TestMapper");
+        strategy.setSuperMapperClass("org.springframework.data.jpa.repository.JpaRepository");
         // 自定义 service 父类
         // strategy.setSuperServiceClass("com.baomidou.demo.TestService");
         // 自定义 service 实现类父类
@@ -113,9 +114,8 @@ public class MpGenerator {
         pc.setParent("com.whp");
 
         pc.setController("web.controller");
-        pc.setEntity("dao.entity");
-        pc.setMapper("dao.mapper");
-        pc.setXml("dao.mapper.xml");
+        pc.setEntity("pojo");
+        pc.setMapper("dao");
         pc.setModuleName(moduleName);
         pc.setService("iservice");
         pc.setServiceImpl("service");
@@ -126,7 +126,7 @@ public class MpGenerator {
         TemplateConfig tc = new TemplateConfig();
         tc.setController("ms_coder_mybatis_template/controller.java2.vm");
         tc.setEntity("ms_coder_mybatis_template/entity.java2.vm");
-        tc.setMapper("ms_coder_mybatis_template/mapper.java2.vm");
+        tc.setMapper("ms_coder_mybatis_template/dao.vm");
         tc.setXml("ms_coder_mybatis_template/mapper.xml2.vm");
         tc.setService("ms_coder_mybatis_template/service.java2.vm");
         tc.setServiceImpl("ms_coder_mybatis_template/serviceImpl.java2.vm");
@@ -139,7 +139,7 @@ public class MpGenerator {
 
     public static void makeCode_jpa() {
         // 模块名
-        String moduleName = "model";
+        String moduleName = module_name;
         // 表名
         String[] tableName = new String[] {table_names};
         // String[] tableName = new String[] { "aut_user" };
@@ -156,7 +156,7 @@ public class MpGenerator {
         gc.setOpen(true);
         gc.setAuthor("wuhp");
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
-        // gc.setMapperName("%sDao");
+         gc.setMapperName("%sRepository");
         // gc.setXmlName("%sDao");
         gc.setServiceName("%sService");
         // gc.setServiceImplName("%sServiceDiy");
@@ -206,9 +206,9 @@ public class MpGenerator {
         pc.setParent("com.whp");
 
         pc.setController("web.controller");
-        pc.setEntity("dao.entity");
-        pc.setMapper("dao.mapper");
-        pc.setXml("dao.mapper.xml");
+        pc.setEntity("dao.pojo");
+        pc.setMapper("dao.repository");
+      //  pc.setXml("dao.mapper.xml");
         pc.setModuleName(moduleName);
         pc.setService("iservice");
         pc.setServiceImpl("service");
@@ -217,12 +217,11 @@ public class MpGenerator {
 
         // 自定义模板配置(如果设置null则不生成该模块)
         TemplateConfig tc = new TemplateConfig();
-        tc.setController("ms_coder_jpa_template/controller.java2.vm");
-        tc.setEntity("ms_coder_jpa_template/entity.java2.vm");
-        tc.setMapper("ms_coder_jpa_template/mapper.java2.vm");
-        tc.setXml("ms_coder_jpa_template/mapper.xml2.vm");
-        tc.setService("ms_coder_jpa_template/service.java2.vm");
-        tc.setServiceImpl("ms_coder_jpa_template/serviceImpl.java2.vm");
+        tc.setController("ms_coder_jpa_template/controller.java.vm");
+        tc.setEntity("ms_coder_jpa_template/1pojo.java.vm");
+        tc.setMapper("ms_coder_jpa_template/Repository.java.vm");
+        tc.setService("ms_coder_jpa_template/service.java.vm");
+        tc.setServiceImpl("ms_coder_jpa_template/serviceImpl.java.vm");
 
         mpg.setTemplate(tc);
 
@@ -232,20 +231,19 @@ public class MpGenerator {
 
     public static void deleteFile() {
         File controller = new File(PATH + "/controller");
-        File entity = new File(PATH + "/entity");
-        File mapper = new File(PATH + "/mapper");
+        File entity = new File(PATH + "/dao");
+       // File mapper = new File(PATH + "/mapper");
         File service = new File(PATH + "/service");
         deleteDir(controller);
         deleteDir(entity);
-        deleteDir(mapper);
+     //   deleteDir(mapper);
         deleteDir(service);
     }
 
     public static void copyFile(File file) {
         File controller = new File(PATH + "/controller");
-        File entity = new File(PATH + "/entity");
-        File mapper = new File(PATH + "/mapper");
-        File xml = new File(PATH + "/mapper/xml");
+        File entity = new File(PATH + "/dao/pojo");
+        File mapper = new File(PATH + "/dao/repository");
         File service = new File(PATH + "/service");
         File impl = new File(PATH + "/service/impl");
 
@@ -253,7 +251,6 @@ public class MpGenerator {
         entity.mkdirs();
         mapper.mkdirs();
         service.mkdirs();
-        xml.mkdirs();
         impl.mkdirs();
         File[] files = file.listFiles();
         for (File a : files) {
@@ -263,10 +260,9 @@ public class MpGenerator {
                 System.out.println(a.getAbsolutePath());
                 System.out.println(a.getName());
                 String type = "";
-                if (a.getName().endsWith("Mapper.java")) {
-                    type = "mapper";
-                } else if (a.getName().endsWith("Mapper.xml")) {
-                    type = "mapper/xml";
+                if (a.getName().endsWith("Repository.java")) {
+                    type = "dao/jojo";
+                    type = "dao/repository";
                 } else if (a.getName().endsWith("Service.java")) {
                     type = "service";
                 } else if (a.getName().endsWith("ServiceImpl.java")) {

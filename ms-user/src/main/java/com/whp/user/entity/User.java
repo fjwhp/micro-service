@@ -7,8 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.whp.pojo.PublicProperty;
 @Entity
-public class User implements Serializable {
+public class User extends PublicProperty implements Serializable {
 
 	/**
 	 * 
@@ -21,7 +23,6 @@ public class User implements Serializable {
 	private String userName;
 	private String pwd;
 	private String email;
-	private String address;
 
 	public Integer getId() {
 		return id;
@@ -55,12 +56,5 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-  public String getAddress() {
-    return address;
-  }
-
-  public void setAddress(String address) {
-    this.address = address;
-  }
 	
 }
