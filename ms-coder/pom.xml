@@ -14,7 +14,26 @@
 	<url>http://maven.apache.org</url>
   <!--######################################-->
   <dependencies>
-	
-  </dependencies>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>aljoin-mybatis-plus</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>oracle.jdbc</groupId>
+			<artifactId>oracle-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>
