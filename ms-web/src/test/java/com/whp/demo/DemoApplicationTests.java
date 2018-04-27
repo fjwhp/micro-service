@@ -134,6 +134,14 @@ public class DemoApplicationTests {
 			// TODO: handle exception
 		}
 	}
+	@Test
+    public void jpaTest(){
+        List<TDept> list=deptRepository.findAll();
+        System.out.println(list.size());
+        
+        long i=deptRepository.count();
+        System.out.println("长度=="+i);
+    }
 
 	// 以下是封装内容
 	// ##############################################################################
@@ -165,12 +173,5 @@ public class DemoApplicationTests {
 		}
 
 	}
-	@Test
-	public void jpaTest(){
-	    List<TDept> list=deptRepository.findAll();
-	    System.out.println(list.size());
-	    
-	    long i=deptRepository.count();
-	    System.out.println("长度=="+i);
-	}
+	
 }
