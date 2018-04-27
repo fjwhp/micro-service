@@ -1,0 +1,188 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.whp</groupId>
+	<artifactId>ms-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>ms-parent</name>
+	<url>http://maven.apache.org</url>
+	<!-- 发布到远程的目录 -->
+	<!--<distributionManagement> <repository> <id>nexus-releases</id> <name>Nexus 
+		Release Repository</name> <url>http://192.168.0.10:8081/nexus/content/repositories/releases/</url> 
+		</repository> <snapshotRepository> <id>nexus-snapshots</id> <name>Nexus Snapshot 
+		Repository</name> <url>http://192.168.0.10:8081/nexus/content/repositories/snapshots/</url> 
+		</snapshotRepository> </distributionManagement> -->
+
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://192.168.0.216:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://192.168.0.216:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<!-- 配置属性、版本说明 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<org.springframework.boot.version>1.5.2.RELEASE</org.springframework.boot.version>
+		<springfox-swagger2.version>2.2.2</springfox-swagger2.version>
+		<mysql.version>5.1.21</mysql.version>
+		<com.alibaba.fastjson.version>1.2.40</com.alibaba.fastjson.version>
+		<com.esotericsoftware.kryo.versio>3.0.3</com.esotericsoftware.kryo.versio>
+		<org.apache.commons.commons-lang3.version>3.7</org.apache.commons.commons-lang3.version>
+		<org.apache.httpcomponents.httpclient.version>4.5</org.apache.httpcomponents.httpclient.version>
+		<org.apache.httpcomponents.httpcore.version>4.4.4</org.apache.httpcomponents.httpcore.version>
+		<org.apache.httpcomponents.httpmime.version>4.5</org.apache.httpcomponents.httpmime.version>
+		<poi.version>3.13</poi.version>
+		<org.apache.pdfbox.pdfbox.version>1.8.13</org.apache.pdfbox.pdfbox.version>
+		<org.apache.xmlbeans.xmlbeans.version>2.6.0</org.apache.xmlbeans.xmlbeans.version>
+		<org.projectlombok.lombok-maven.version>1.12.6.0</org.projectlombok.lombok-maven.version>
+	</properties>
+	<!-- 模块引入 start -->
+	<modules>
+		<module>ms-demo</module>
+		<module>ms-config</module>
+		<module>ms-web</module>
+		<module>ms-user</module>
+		<module>ms-redis</module>
+		<module>ms-async</module>
+		<module>ms-utils</module>
+		<module>ms-office</module>
+		<module>ms-solr</module>
+		<module>ms-webSocket</module>
+		<module>ms-core</module>
+	</modules>
+	<!-- 模块引入 end -->
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- spring boot相关支持，相当于增加spring boot parent -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${org.springframework.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- javabean 生产setter getter工具 -->
+			<!-- <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok-maven</artifactId> 
+				<type>pom</type> <scope>provided</scope> <version>${org.projectlombok.lombok-maven.version}</version> 
+				</dependency> -->
+			<dependency>
+				<groupId>ms.org.projectlombok</groupId>
+				<artifactId>lombok-maven</artifactId>
+				<version>5.1.0.5.1</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${springfox-swagger2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${springfox-swagger2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${com.alibaba.fastjson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.esotericsoftware</groupId>
+				<artifactId>kryo</artifactId>
+				<version>${com.esotericsoftware.kryo.versio}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${org.apache.commons.commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${org.apache.httpcomponents.httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpcore</artifactId>
+				<version>${org.apache.httpcomponents.httpcore.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpmime</artifactId>
+				<version>${org.apache.httpcomponents.httpmime.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.pdfbox</groupId>
+				<artifactId>pdfbox</artifactId>
+				<version>${org.apache.pdfbox.pdfbox.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-scratchpad</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<!-- EXCEL -->
+			<dependency>
+				<groupId>org.apache.xmlbeans</groupId>
+				<artifactId>xmlbeans</artifactId>
+				<version>${org.apache.xmlbeans.xmlbeans.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml-schemas</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${org.projectlombok.lombok-maven.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- lombok插件 -->
+			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
+				<version>${org.projectlombok.lombok-maven.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>
