@@ -1,0 +1,4 @@
+1	开发工具eclipse Mars.2 Release (4.5.2)
+2	jdk1.8	
+3	底层架构 		jpa+hibernate 
+4	整体框架		springboot1.5.2.RELEASE 详细参数参考	【{micro-service}-->pom.xml-->properties】
