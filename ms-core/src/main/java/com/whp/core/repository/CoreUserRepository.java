@@ -1,10 +1,7 @@
 package com.whp.core.repository;
 
-import java.util.List;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.whp.core.pojo.CoreUser;
+import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * 
  * @描述：用户表(dao接口).
@@ -15,5 +12,5 @@ import com.whp.core.pojo.CoreUser;
  */
 public interface CoreUserRepository extends JpaRepository<CoreUser, Long> {
 
-    List<CoreUser> findAll();
+
 }

@@ -127,7 +127,7 @@ public class MpGenerator {
         tc.setController("ms_coder_mybatis_template/controller.java2.vm");
         tc.setEntity("ms_coder_mybatis_template/entity.java2.vm");
         tc.setMapper("ms_coder_mybatis_template/dao.vm");
-        tc.setXml("ms_coder_mybatis_template/mapper.xml2.vm");
+       // tc.setXml("ms_coder_mybatis_template/mapper.xml2.vm");
         tc.setService("ms_coder_mybatis_template/service.java2.vm");
         tc.setServiceImpl("ms_coder_mybatis_template/serviceImpl.java2.vm");
 
@@ -206,8 +206,8 @@ public class MpGenerator {
         pc.setParent("com.whp");
 
         pc.setController("web.controller");
-        pc.setEntity("dao.pojo");
-        pc.setMapper("dao.repository");
+        pc.setEntity("pojo");
+        pc.setMapper("repository");
       //  pc.setXml("dao.mapper.xml");
         pc.setModuleName(moduleName);
         pc.setService("iservice");
@@ -242,8 +242,8 @@ public class MpGenerator {
 
     public static void copyFile(File file) {
         File controller = new File(PATH + "/controller");
-        File entity = new File(PATH + "/dao/pojo");
-        File mapper = new File(PATH + "/dao/repository");
+        File entity = new File(PATH + "/pojo");
+        File mapper = new File(PATH + "/repository");
         File service = new File(PATH + "/service");
         File impl = new File(PATH + "/service/impl");
 
@@ -261,16 +261,15 @@ public class MpGenerator {
                 System.out.println(a.getName());
                 String type = "";
                 if (a.getName().endsWith("Repository.java")) {
-                    type = "dao/jojo";
-                    type = "dao/repository";
+                    type = "repository";
                 } else if (a.getName().endsWith("Service.java")) {
                     type = "service";
                 } else if (a.getName().endsWith("ServiceImpl.java")) {
                     type = "service/impl";
                 } else if (a.getName().endsWith("Controller.java")) {
                     type = "controller";
-                } else {
-                    type = "entity";
+                } else if (!a.getName().endsWith("Mapper.xml")) {
+                    type = "pojo";
                 }
 
                 File tagFile = new File(PATH + "/" + type + "/" + a.getName());
