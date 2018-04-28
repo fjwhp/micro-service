@@ -1,15 +1,8 @@
 package com.whp.core.pojo;
 
-import java.io.Serializable;
 import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.*;
 
 /**
  * 
@@ -17,58 +10,59 @@ import javax.persistence.Table;
  * 
  * @作者：wuhp
  * 
- * @时间: 2018-04-27
+ * @时间: 2018-04-28
  */
 
 @Entity
-@Table(name = "core_user")
-@NamedQuery(name = "CoreUser.findAll", query = "SELECT t FROM CoreUser t")
+@Table(name="core_user")
+@NamedQuery(name="CoreUser.findAll", query="SELECT t FROM CoreUser t")
 public class CoreUser implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
 
-	/**
-	 * 用户Id 主键
-	 */
-	@Column(name = "user_id")
+    /**
+     * 用户Id 主键
+     */
+	@Column(name="user_id")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;
-	/**
-	 * 用户登录名字
-	 */
-	@Column(name = "user_name")
+    /**
+     * 用户登录名字
+     */
+	@Column(name="user_name")
 	private String userName;
-	/**
-	 * 用户密码
-	 */
-	@Column(name = "user_pwd")
+    /**
+     * 用户密码
+     */
+	@Column(name="user_pwd")
 	private String userPwd;
-	/**
-	 * 是否冻结
-	 */
-	@Column(name = "is_active")
+    /**
+     * 是否冻结
+     */
+	@Column(name="is_active")
 	private String isActive;
-	/**
-	 * 修改人ID
-	 */
-	@Column(name = "update_user_id")
+    /**
+     * 修改人ID
+     */
+	@Column(name="update_user_id")
 	private Long updateUserId;
-	/**
-	 * 修改时间
-	 */
-	@Column(name = "update_time")
+    /**
+     * 修改时间
+     */
+	@Column(name="update_time")
 	private Date updateTime;
-	/**
-	 * 修改人登录帐号
-	 */
-	@Column(name = "update_user_name")
+    /**
+     * 修改人登录帐号
+     */
+	@Column(name="update_user_name")
 	private String updateUserName;
-	/**
-	 * 平台
-	 */
-	@Column(name = "platform")
+    /**
+     * 平台
+     */
+	@Column(name="platform")
 	private Integer platform;
+
 
 	public Long getUserId() {
 		return userId;

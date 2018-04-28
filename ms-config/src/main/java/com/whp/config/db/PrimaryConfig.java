@@ -46,7 +46,7 @@ public class PrimaryConfig {
 	@Bean(name = "entityManagerFactoryPrimary")
 	public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
 		return builder.dataSource(primaryDataSource).properties(getVendorProperties(primaryDataSource))
-				.packages("com.whp.user.entity") // 设置实体类所在位置
+				.packages("com.whp.*.pojo") // 设置实体类所在位置
 				.persistenceUnit("primaryPersistenceUnit").build();
 	}
 

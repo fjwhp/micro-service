@@ -56,7 +56,6 @@
 			<artifactId>ms-user</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.whp</groupId>
 			<artifactId>ms-config</artifactId>
@@ -65,6 +64,11 @@
 		<dependency>
 			<groupId>com.whp</groupId>
 			<artifactId>ms-async</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.whp</groupId>
+			<artifactId>ms-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

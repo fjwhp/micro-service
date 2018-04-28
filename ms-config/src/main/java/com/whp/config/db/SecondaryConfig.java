@@ -30,7 +30,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactorySecondary",
         transactionManagerRef="transactionManagerSecondary",
-        basePackages= { "com.whp.*.*Entity" }) //TODO设置Repository所在位置
+        basePackages= { "com.whp.*.repository" }) //TODO设置Repository所在位置
 public class SecondaryConfig {
 
 	@Autowired @Qualifier("secondaryDataSource")
@@ -46,7 +46,7 @@ public class SecondaryConfig {
         return builder
                 .dataSource(secondaryDataSource)
                 .properties(getVendorProperties(secondaryDataSource))
-                .packages("com.whp.*.*Entity") //设置实体类所在位置
+                .packages("com.whp.*.pojo") //设置实体类所在位置
                 .persistenceUnit("secondaryPersistenceUnit")
                 .build();
     }

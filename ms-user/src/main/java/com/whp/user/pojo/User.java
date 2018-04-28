@@ -1,4 +1,4 @@
-package com.whp.user.entity;
+package com.whp.user.pojo;
 
 import java.io.Serializable;
 

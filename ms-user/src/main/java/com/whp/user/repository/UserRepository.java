@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.whp.user.entity.User;
+import com.whp.user.pojo.User;
 @CacheConfig(cacheNames="users")
 public interface UserRepository extends  JpaRepository<User, Long> {
 

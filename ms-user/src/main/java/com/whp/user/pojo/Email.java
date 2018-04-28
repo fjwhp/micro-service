@@ -1,4 +1,4 @@
-package com.whp.user.entity;
+package com.whp.user.pojo;
 public class Email {
 
     private String eamilId;

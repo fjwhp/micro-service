@@ -1,5 +1,6 @@
 package com.whp.demo;
 
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Future;
 
@@ -24,8 +25,10 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.whp.async.AsysncTheadTaskService;
 import com.whp.config.properties.SystemBaseProperties;
-import com.whp.user.entity.TDept;
-import com.whp.user.entity.User;
+import com.whp.core.pojo.CoreUser;
+import com.whp.core.repository.CoreUserRepository;
+import com.whp.user.pojo.TDept;
+import com.whp.user.pojo.User;
 import com.whp.user.repository.DeptRepository;
 import com.whp.user.repository.UserRepository;
 
@@ -52,6 +55,10 @@ public class DemoApplicationTests {
 	private UserRepository userRepository;
 	@Autowired
 	private DeptRepository deptRepository;
+	@Autowired
+	private CoreUserRepository coreUserRepository;
+	
+	
 	@Before
 	public void setupMvc() throws Exception {
 		mvc = MockMvcBuilders.webAppContextSetup(context).build();
@@ -140,8 +147,24 @@ public class DemoApplicationTests {
         System.out.println(list.size());
         
         long i=deptRepository.count();
+        TDept tDept =new TDept();
+        tDept.setDeptName11("1111");
+        deptRepository.save(tDept);
         System.out.println("长度=="+i);
     }
+	
+	@Test
+	public void coreTest(){
+	    CoreUser user =new CoreUser();
+	    user.setUserName("wuhp");
+	    user.setIsActive("1");
+	    user.setPlatform(1);
+	    user.setUpdateTime(new Date());
+	    user.setUpdateUserId(1l);
+	    user.setUserName("whp");
+	    coreUserRepository.save(user);
+	    //coreUserRepository.findAll();
+	}
 
 	// 以下是封装内容
 	// ##############################################################################

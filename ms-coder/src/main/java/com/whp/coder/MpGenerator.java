@@ -217,11 +217,11 @@ public class MpGenerator {
 
         // 自定义模板配置(如果设置null则不生成该模块)
         TemplateConfig tc = new TemplateConfig();
-        tc.setController("ms_coder_jpa_template/controller.java.vm");
-        tc.setEntity("ms_coder_jpa_template/1pojo.java.vm");
+        tc.setController("ms_coder_jpa_template/Controller.java.vm");
+        tc.setEntity("ms_coder_jpa_template/pojo.java.vm");
         tc.setMapper("ms_coder_jpa_template/Repository.java.vm");
-        tc.setService("ms_coder_jpa_template/service.java.vm");
-        tc.setServiceImpl("ms_coder_jpa_template/serviceImpl.java.vm");
+        tc.setService("ms_coder_jpa_template/Service.java.vm");
+        tc.setServiceImpl("ms_coder_jpa_template/ServiceImpl.java.vm");
 
         mpg.setTemplate(tc);
 
