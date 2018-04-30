@@ -10,7 +10,7 @@ import com.whp.core.repository.BaseRepository;
  * 
  * @时间: ${date}
  */
-public interface ${table.mapperName} extends BaseRepository<${entity}, Long> {
+public interface ${table.mapperName} extends BaseRepository<${entity}, String> {
 
 
 }

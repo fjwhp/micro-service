@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -154,14 +155,19 @@ public class DemoApplicationTests {
     }
 	
 	@Test
+	@Rollback(false)
 	public void coreTest(){
 	    CoreUser user =new CoreUser();
 	    user.setUserName("wuhp");
-	    user.setIsActive("1");
+	    user.setIsActive(1);
 	    user.setPlatform(1);
 	    user.setUpdateTime(new Date());
 	    user.setUpdateUserId(1l);
 	    user.setUserName("whp");
+	    user.setVersion(1);
+	    user.setIsDelete("1");
+	    user.setUserId(1l);
+	    user.setCreateTime(new Date());
 	    coreUserRepository.save(user);
 	    //coreUserRepository.findAll();
 	}

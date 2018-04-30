@@ -1,7 +1,7 @@
 package ${package.Entity};
 
 #foreach($pkg in ${table.importPackages})
-#if($pkg!="com.baomidou.mybatisplus.annotations.TableId" && $pkg!="com.baomidou.mybatisplus.annotations.TableField")
+#if($pkg.indexOf("baomidou")<1)
 import ${pkg};
 #end
 #end
@@ -46,13 +46,14 @@ private static final long serialVersionUID = 1L;
 	@Column(name="${field.name}")
 #if(${field.keyFlag})
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 #if(${field.keyIdentityFlag})
 	
 #elseif(${field.convert})
     
 #end
 #elseif(${field.convert})
+	
 #end
 #if(${field.propertyType.equals("Long")})
 #end
@@ -81,7 +82,21 @@ private static final long serialVersionUID = 1L;
 #end
 	}
 #end
-
+	/**
+	 * 版本号
+	 */
+	 @Column(name="version") 
+	private Integer version;
+	/**
+	 * 是否删除 1 是 ，0否
+	 */
+	 @Column(name="is_delete")
+	private String isDelete;
+	/**
+     * 创建时间
+     */
+	@Column(name="create_time")
+	private Date createTime;
 #if(${entityColumnConstant})
 #foreach($field in ${table.fields})
 	public static final String ${field.name.toUpperCase()} = "${field.name}";
@@ -99,4 +114,27 @@ private static final long serialVersionUID = 1L;
 	}
 
 #end
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+
+	public String getIsDelete() {
+		return isDelete;
+	}
+
+	public void setIsDelete(String isDelete) {
+		this.isDelete = isDelete;
+	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public CoreUser setCreateTime(Date createTime) {
+		this.createTime = createTime;
+		return this;
+	}
 }

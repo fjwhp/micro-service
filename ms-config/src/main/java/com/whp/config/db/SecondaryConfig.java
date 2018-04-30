@@ -25,14 +25,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * 
  * @时间：2018年3月14日 下午10:19:28
  */
-@Configuration
+/*@Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactorySecondary",
         transactionManagerRef="transactionManagerSecondary",
         basePackages= { "com.whp.*.repository" }) //TODO设置Repository所在位置
-public class SecondaryConfig {
-
+*/public class SecondaryConfig {
+/*
 	@Autowired @Qualifier("secondaryDataSource")
     private DataSource secondaryDataSource;
 
@@ -61,5 +61,5 @@ public class SecondaryConfig {
     @Bean(name = "transactionManagerSecondary")
     PlatformTransactionManager transactionManagerSecondary(EntityManagerFactoryBuilder builder) {
         return new JpaTransactionManager(entityManagerFactorySecondary(builder).getObject());
-    }
+    }*/
 }
