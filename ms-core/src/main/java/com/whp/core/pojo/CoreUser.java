@@ -1,8 +1,15 @@
 package com.whp.core.pojo;
 
-import java.util.Date;
 import java.io.Serializable;
-import javax.persistence.*;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 /**
  * 
@@ -12,58 +19,78 @@ import javax.persistence.*;
  * 
  * @时间: 2018-04-29
  */
-
 @Entity
-@Table(name="core_user")
-@NamedQuery(name="CoreUser.findAll", query="SELECT t FROM CoreUser t")
+@Table(name = "core_user")
+@NamedQuery(name = "CoreUser.findAll", query = "SELECT t FROM CoreUser t")
 public class CoreUser implements Serializable {
 
-private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * 用户Id 主键
-     */
-	@Column(name="user_id")
+	/**
+	 * 用户Id 主键
+	 */
+	@Column(name = "user_id")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
 	private Long userId;
-    /**
-     * 用户登录名字
-     */
-	@Column(name="user_name")
+	/**
+	 * 用户登录名字
+	 */
+	@Column(name = "user_name")
 	private String userName;
-    /**
-     * 用户密码
-     */
-	@Column(name="user_pwdr")
-	private String userPwdr;
-    /**
-     * 是否冻结
-     */
-	@Column(name="is_active")
+	/**
+	 * 用户密码
+	 */
+	@Column(name = "user_pwd")
+	private String userPwd;
+	/**
+	 * 是否冻结
+	 */
+	@Column(name = "is_active")
 	private Integer isActive;
-    /**
-     * 修改人ID
-     */
-	@Column(name="update_user_id")
+	/**
+	 * 修改人ID
+	 */
+	@Column(name = "update_user_id")
 	private Long updateUserId;
-    /**
-     * 修改时间
-     */
-	@Column(name="update_time")
+	/**
+	 * 修改时间
+	 */
+	@Column(name = "update_time")
 	private Date updateTime;
-    /**
-     * 修改人登录帐号
-     */
-	@Column(name="update_user_name")
+	/**
+	 * 修改人登录帐号
+	 */
+	@Column(name = "update_user_name")
 	private String updateUserName;
-    /**
-     * 平台
-     */
-	@Column(name="platform")
+	/**
+	 * 平台
+	 */
+	@Column(name = "platform")
 	private Integer platform;
 
+	/**
+	 * 创建人id
+	 */
+	@Column(name = "create_user_id")
+	private Long createUserId;
+	@Column(name = "create_user_name")
+	private String createUserName;
+	/**
+	 * 版本号
+	 */
+	@Column(name = "version")
+	private Integer version;
+	/**
+	 * 是否删除 1 是 ，0否
+	 */
+	@Column(name = "is_delete")
+	private String isDelete;
+	/**
+	 * 创建时间
+	 */
+	@Column(name = "create_time")
+	private Date createTime;
 
 	public Long getUserId() {
 		return userId;
@@ -83,13 +110,14 @@ private static final long serialVersionUID = 1L;
 		return this;
 	}
 
-	public String getUserPwdr() {
-		return userPwdr;
+	
+
+	public String getUserPwd() {
+		return userPwd;
 	}
 
-	public CoreUser setUserPwdr(String userPwdr) {
-		this.userPwdr = userPwdr;
-		return this;
+	public void setUserPwd(String userPwd) {
+		this.userPwd = userPwd;
 	}
 
 	public Integer getIsActive() {
@@ -136,21 +164,7 @@ private static final long serialVersionUID = 1L;
 		this.platform = platform;
 		return this;
 	}
-	/**
-	 * 版本号
-	 */
-	 @Column(name="version") 
-	private Integer version;
-	/**
-	 * 是否删除 1 是 ，0否
-	 */
-	 @Column(name="is_delete")
-	private String isDelete;
-	/**
-     * 创建时间
-     */
-	@Column(name="create_time")
-	private Date createTime;
+
 	public Integer getVersion() {
 		return version;
 	}
@@ -166,6 +180,7 @@ private static final long serialVersionUID = 1L;
 	public void setIsDelete(String isDelete) {
 		this.isDelete = isDelete;
 	}
+
 	public Date getCreateTime() {
 		return createTime;
 	}
@@ -174,4 +189,21 @@ private static final long serialVersionUID = 1L;
 		this.createTime = createTime;
 		return this;
 	}
+
+	public Long getCreateUserId() {
+		return createUserId;
+	}
+
+	public void setCreateUserId(Long createUserId) {
+		this.createUserId = createUserId;
+	}
+
+	public String getCreateUserName() {
+		return createUserName;
+	}
+
+	public void setCreateUserName(String createUserName) {
+		this.createUserName = createUserName;
+	}
+
 }

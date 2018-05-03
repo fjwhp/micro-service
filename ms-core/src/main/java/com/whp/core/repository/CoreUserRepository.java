@@ -1,7 +1,6 @@
 package com.whp.core.repository;
 
 import com.whp.core.pojo.CoreUser;
-import com.whp.core.repository.BaseRepository;
 
 /**
  * 

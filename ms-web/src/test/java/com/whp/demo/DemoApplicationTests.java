@@ -14,6 +14,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -58,7 +63,6 @@ public class DemoApplicationTests {
 	private DeptRepository deptRepository;
 	@Autowired
 	private CoreUserRepository coreUserRepository;
-	
 	
 	@Before
 	public void setupMvc() throws Exception {
@@ -157,19 +161,44 @@ public class DemoApplicationTests {
 	@Test
 	@Rollback(false)
 	public void coreTest(){
-	    CoreUser user =new CoreUser();
-	    user.setUserName("wuhp");
-	    user.setIsActive(1);
-	    user.setPlatform(1);
-	    user.setUpdateTime(new Date());
-	    user.setUpdateUserId(1l);
-	    user.setUserName("whp");
-	    user.setVersion(1);
-	    user.setIsDelete("1");
-	    user.setUserId(1l);
-	    user.setCreateTime(new Date());
-	    coreUserRepository.save(user);
+		for (int i = 0; i <20; i++) {
+			 CoreUser user =new CoreUser();
+			    user.setUserName("wuhp"+i);
+			    user.setIsActive(1);
+			    user.setPlatform(1);
+			    user.setUpdateTime(new Date());
+			    user.setUpdateUserId(1l);
+			    user.setUserName("whp");
+			    user.setVersion(1);
+			    user.setIsDelete("1");
+			    user.setCreateUserId(1l);
+			    user.setCreateUserName("xx");
+			    user.setUpdateUserName("yyy");
+			    user.setUserPwd("123qwe");
+			    //user.setUserId(Long.parseLong(i));
+			    user.setCreateTime(new Date());
+			    coreUserRepository.save(user);
+		}
+	   
 	    //coreUserRepository.findAll();
+	}
+	@Test
+	public void pageUserTest(){
+		 Sort sort = new Sort(Sort.Direction.DESC,"createTime"); //创建时间降序排序
+		 Pageable pageable = new PageRequest(1,8,sort);
+		 CoreUser condition= new CoreUser();
+		 condition.setIsActive(1);
+		 Example<CoreUser> example=Example.of(condition);
+		// Page<CoreUser> page=coreUserRepository.findAll(pageable);
+		 Page<CoreUser> page= coreUserRepository.findAll(example, pageable);
+		 System.out.println(page.getSize());
+	}
+	@Test
+	public void updateUserTest(){
+		CoreUser user =new CoreUser();
+		user.setUserId(1l);
+		user.setUserName("xxxxxxxxxxxxxxxxxxxxxx");
+		coreUserRepository.save(user);
 	}
 
 	// 以下是封装内容

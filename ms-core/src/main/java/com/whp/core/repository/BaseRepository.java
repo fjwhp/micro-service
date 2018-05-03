@@ -15,4 +15,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.whp.core.pojo.CoreUser;
 public interface BaseRepository <T, ID extends Serializable> extends  JpaRepository<CoreUser, Long> {
 
+	
 }
