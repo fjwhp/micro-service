@@ -18,7 +18,6 @@ public class CoreController {
 	public String saveUser(){
 		CoreUser user =new CoreUser();
 	    user.setUserName("wuhp");
-	    user.setIsActive(1);
 	    user.setPlatform(1);
 	    user.setUpdateTime(new Date());
 	    user.setUpdateUserId(1l);

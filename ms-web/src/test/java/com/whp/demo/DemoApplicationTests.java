@@ -164,7 +164,6 @@ public class DemoApplicationTests {
 		for (int i = 0; i <20; i++) {
 			 CoreUser user =new CoreUser();
 			    user.setUserName("wuhp"+i);
-			    user.setIsActive(1);
 			    user.setPlatform(1);
 			    user.setUpdateTime(new Date());
 			    user.setUpdateUserId(1l);
@@ -187,7 +186,6 @@ public class DemoApplicationTests {
 		 Sort sort = new Sort(Sort.Direction.DESC,"createTime"); //创建时间降序排序
 		 Pageable pageable = new PageRequest(1,8,sort);
 		 CoreUser condition= new CoreUser();
-		 condition.setIsActive(1);
 		 Example<CoreUser> example=Example.of(condition);
 		// Page<CoreUser> page=coreUserRepository.findAll(pageable);
 		 Page<CoreUser> page= coreUserRepository.findAll(example, pageable);

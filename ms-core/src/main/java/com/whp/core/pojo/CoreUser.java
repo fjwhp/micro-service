@@ -41,7 +41,7 @@ public class CoreUser implements Serializable {
 	/**
 	 * 用户密码
 	 */
-	@Column(name = "user_pwd")
+	@Column(name = "user_pwd",columnDefinition="varchar(250) COMMENT '主键，自动生成'")
 	private String userPwd;
 	/**
 	 * 是否冻结
