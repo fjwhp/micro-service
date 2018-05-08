@@ -27,6 +27,19 @@ public class PublicProperty {
 	 * 修改时间
 	 */
 	private Date UpdateTime;
+	/**
+	 * 版本
+	 */
+	private Integer version;
+	/**
+	 * 是否有效 1有效，0无效
+	 */
+	private Integer isValid;
+	/**
+	 * 是否删除-系统逻辑删除，1是，0否
+	 */
+	private Integer isDelete;
+	
 	public long getCreateUserId() {
 		return createUserId;
 	}
@@ -51,6 +64,25 @@ public class PublicProperty {
 	public void setUpdateTime(Date updateTime) {
 		UpdateTime = updateTime;
 	}
+	public Integer getVersion() {
+		return version;
+	}
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+	public Integer getIsValid() {
+		return isValid;
+	}
+	public void setIsValid(Integer isValid) {
+		this.isValid = isValid;
+	}
+	public Integer getIsDelete() {
+		return isDelete;
+	}
+	public void setIsDelete(Integer isDelete) {
+		this.isDelete = isDelete;
+	}
+	
 	
 	
 }
