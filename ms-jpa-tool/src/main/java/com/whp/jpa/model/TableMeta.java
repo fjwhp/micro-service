@@ -9,11 +9,12 @@ import org.apache.commons.lang3.StringUtils;
 import com.whp.jpa.Consts;
 
 /**
- * 表结构信息
  * 
- * @author zhanglikun
- * @mail likun_zhang@yeah.net
- * @date 2013-6-6
+ * @描述：表结构信息
+ *
+ * @作者：whp
+ * 
+ * @时间：2018年5月9日 下午9:16:10
  */
 public class TableMeta {
     private String schemaName;

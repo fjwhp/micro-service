@@ -16,10 +16,12 @@ import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 /**
- * 生成代码入口
- * @author  zhanglikun
- * @date    2013-7-17
- * @desc    XXX
+ * 
+ * @描述：生成代码入口
+ *
+ * @作者：whp
+ * 
+ * @时间：2018年5月9日 下午9:14:59
  */
 public class GenerateMain {
     public static void main(String[] args) throws IOException, TemplateException {

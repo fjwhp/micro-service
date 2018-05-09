@@ -2,10 +2,12 @@ package com.whp.jpa.model;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
 /**
- * 字段结构
- * @author  zhanglikun
- * @mail    likun_zhang@yeah.net
- * @date    2013-6-6
+ * 
+ * @描述：字段结构
+ *
+ * @作者：whp
+ * 
+ * @时间：2018年5月9日 下午9:15:33
  */
 public class ColumnMeta {
     private String columnName ;

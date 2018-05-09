@@ -10,10 +10,12 @@ import com.whp.jpa.Consts;
 import com.whp.jpa.model.ColumnMeta;
 import com.whp.jpa.model.TableMeta;
 /**
- * 解析表结构
- * @author  zhanglikun
- * @mail    likun_zhang@yeah.net
- * @date    2013-6-6
+ * 
+ * @描述：解析表结构
+ *
+ * @作者：whp
+ * 
+ * @时间：2018年5月9日 下午9:15:19
  */
 public class AnalysisDB {
     
