@@ -71,6 +71,11 @@
 			<artifactId>ms-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.whp</groupId>
+			<artifactId>ms-utils</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 
 </project>
