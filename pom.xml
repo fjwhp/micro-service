@@ -61,6 +61,7 @@
 		<module>ms-webSocket</module>
 		<module>ms-core</module>
 		<module>ms-coder</module>
+		<module>ms-jpa-tool</module>
 	</modules>
 	<!-- 模块引入 end -->
 
