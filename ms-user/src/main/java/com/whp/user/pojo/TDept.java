@@ -1,119 +1,109 @@
 package com.whp.user.pojo;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.sql.Blob;
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 
 /**
  * 
- * @描述：部门表(实体类).
- * 
- * @作者：wuhp
- * 
- * @时间: 2018-04-27
+ * @desc TDept(实体类)
+ * @date 2018/05/09
  */
-
+/**
+ * 
+ * @描述：TODO
+ *
+ * @作者：
+ * 
+ * @时间：
+ */
 @Entity
-@Table(name="t_dept")
-@NamedQuery(name="TDept.findAll", query="SELECT t FROM TDept t")
-public class TDept implements Serializable {
-
-private static final long serialVersionUID = 1L;
-
-    /**
-     * 部门id
+@Table(name = "t_dept")
+@NamedQuery(name = "TDept.findAll", query = "SELECT t FROM TDept t")
+public class TDept {
+    /*
+     *  主键
      */
-	@Column(name="dept_id")
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long deptId;
-    /**
-     * 部门名称
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "dept_id", length = 20, nullable = false, columnDefinition = "int(20) comment '主键'")
+    private Long deptId;
+    @javax.persistence.Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    /*
+     *  创建时间
      */
-	@Column(name="dept_name11")
-	private String deptName11;
-	@Column(name="samill")
-	private Integer samill;
-	@Column(name="sdssss")
-	private Double sdssss;
-	@Column(name="ddd")
-	private BigDecimal ddd;
-	@Column(name="ttt")
-	private Date ttt;
-	@Column(name="bb")
-	private Blob bb;
+    @Column(name = "create_date", columnDefinition = "timestamp comment '创建时间'")
+    private java.util.Date createDate;
+    /*
+     *  部门名称
+     */
+    @Column(name = "dept_name", length = 19, columnDefinition = "varchar(19) comment '部门名称'")
+    private String deptName;
+    /*
+     *  部门代码
+     */
+    @Column(name = "dept_code", length = 255, columnDefinition = "varchar(255) comment '部门代码'")
+    private String deptCode;
+    @Column(name = "relativ_id", length = 11)
+    private Long relativId;
+    @javax.persistence.Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    /*
+     *  备注
+     */
+    @Column(name = "remark", columnDefinition = "datetime comment '备注'")
+    private java.util.Date remark;
 
+    // setter getter #####################################################################
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
 
-	public Long getDeptId() {
-		return deptId;
-	}
+    public Long getDeptId() {
+        return this.deptId;
+    }
 
-	public TDept setDeptId(Long deptId) {
-		this.deptId = deptId;
-		return this;
-	}
+    public void setCreateDate(java.util.Date createDate) {
+        this.createDate = createDate;
+    }
 
-	public String getDeptName11() {
-		return deptName11;
-	}
+    public java.util.Date getCreateDate() {
+        return this.createDate;
+    }
 
-	public TDept setDeptName11(String deptName11) {
-		this.deptName11 = deptName11;
-		return this;
-	}
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
 
-	public Integer getSamill() {
-		return samill;
-	}
+    public String getDeptName() {
+        return this.deptName;
+    }
 
-	public TDept setSamill(Integer samill) {
-		this.samill = samill;
-		return this;
-	}
+    public void setDeptCode(String deptCode) {
+        this.deptCode = deptCode;
+    }
 
-	public Double getSdssss() {
-		return sdssss;
-	}
+    public String getDeptCode() {
+        return this.deptCode;
+    }
 
-	public TDept setSdssss(Double sdssss) {
-		this.sdssss = sdssss;
-		return this;
-	}
+    public void setRelativId(Long relativId) {
+        this.relativId = relativId;
+    }
 
-	public BigDecimal getDdd() {
-		return ddd;
-	}
+    public Long getRelativId() {
+        return this.relativId;
+    }
 
-	public TDept setDdd(BigDecimal ddd) {
-		this.ddd = ddd;
-		return this;
-	}
+    public void setRemark(java.util.Date remark) {
+        this.remark = remark;
+    }
 
-	public Date getTtt() {
-		return ttt;
-	}
-
-	public TDept setTtt(Date ttt) {
-		this.ttt = ttt;
-		return this;
-	}
-
-	public Blob getBb() {
-		return bb;
-	}
-
-	public TDept setBb(Blob bb) {
-		this.bb = bb;
-		return this;
-	}
+    public java.util.Date getRemark() {
+        return this.remark;
+    }
 
 }

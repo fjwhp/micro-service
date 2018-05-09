@@ -1,6 +1,7 @@
 package com.whp.core.pojo;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,200 +11,164 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
+ * The persistent class for the core_user database table.
  * 
- * @描述：用户表(实体类).
- * 
- * @作者：wuhp
- * 
- * @时间: 2018-04-29
  */
 @Entity
 @Table(name = "core_user")
-@NamedQuery(name = "CoreUser.findAll", query = "SELECT t FROM CoreUser t")
+@NamedQuery(name = "CoreUser.findAll", query = "SELECT c FROM CoreUser c")
 public class CoreUser implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-	private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
+    private Integer userId;
 
-	/**
-	 * 用户Id 主键
-	 */
-	@Column(name = "user_id")
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long userId;
-	/**
-	 * 用户登录名字
-	 */
-	@Column(name = "user_name")
-	private String userName;
-	/**
-	 * 用户密码
-	 */
-	@Column(name = "user_pwd",columnDefinition="varchar(250) COMMENT '主键，自动生成'")
-	private String userPwd;
-	/**
-	 * 是否冻结
-	 */
-	@Column(name = "is_active")
-	private Integer isActive;
-	/**
-	 * 修改人ID
-	 */
-	@Column(name = "update_user_id")
-	private Long updateUserId;
-	/**
-	 * 修改时间
-	 */
-	@Column(name = "update_time")
-	private Date updateTime;
-	/**
-	 * 修改人登录帐号
-	 */
-	@Column(name = "update_user_name")
-	private String updateUserName;
-	/**
-	 * 平台
-	 */
-	@Column(name = "platform")
-	private Integer platform;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "create_time")
+    private Date createTime;
 
-	/**
-	 * 创建人id
-	 */
-	@Column(name = "create_user_id")
-	private Long createUserId;
-	@Column(name = "create_user_name")
-	private String createUserName;
-	/**
-	 * 版本号
-	 */
-	@Column(name = "version")
-	private Integer version;
-	/**
-	 * 是否删除 1 是 ，0否
-	 */
-	@Column(name = "is_delete")
-	private String isDelete;
-	/**
-	 * 创建时间
-	 */
-	@Column(name = "create_time")
-	private Date createTime;
+    @Column(name = "create_user_id")
+    private BigInteger createUserId;
 
-	public Long getUserId() {
-		return userId;
-	}
+    @Column(name = "create_user_name")
+    private String createUserName;
 
-	public CoreUser setUserId(Long userId) {
-		this.userId = userId;
-		return this;
-	}
+    @Column(name = "is_active")
+    private int isActive;
 
-	public String getUserName() {
-		return userName;
-	}
+    @Column(name = "is_delete")
+    private String isDelete;
 
-	public CoreUser setUserName(String userName) {
-		this.userName = userName;
-		return this;
-	}
+    private int platform;
 
-	
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "update_time")
+    private Date updateTime;
 
-	public String getUserPwd() {
-		return userPwd;
-	}
+    @Column(name = "update_user_id")
+    private BigInteger updateUserId;
 
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
-	}
+    @Column(name = "update_user_name")
+    private String updateUserName;
 
-	public Integer getIsActive() {
-		return isActive;
-	}
+    @Column(name = "user_name")
+    private String userName;
 
-	public CoreUser setIsActive(Integer isActive) {
-		this.isActive = isActive;
-		return this;
-	}
+    @Column(name = "user_pwd")
+    private String userPwd;
 
-	public Long getUpdateUserId() {
-		return updateUserId;
-	}
+    private int version;
 
-	public CoreUser setUpdateUserId(Long updateUserId) {
-		this.updateUserId = updateUserId;
-		return this;
-	}
+    public CoreUser() {}
 
-	public Date getUpdateTime() {
-		return updateTime;
-	}
+    public Integer getUserId() {
+        return userId;
+    }
 
-	public CoreUser setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-		return this;
-	}
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-	public String getUpdateUserName() {
-		return updateUserName;
-	}
+    public Date getCreateTime() {
+        return this.createTime;
+    }
 
-	public CoreUser setUpdateUserName(String updateUserName) {
-		this.updateUserName = updateUserName;
-		return this;
-	}
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
-	public Integer getPlatform() {
-		return platform;
-	}
+    public BigInteger getCreateUserId() {
+        return this.createUserId;
+    }
 
-	public CoreUser setPlatform(Integer platform) {
-		this.platform = platform;
-		return this;
-	}
+    public void setCreateUserId(BigInteger createUserId) {
+        this.createUserId = createUserId;
+    }
 
-	public Integer getVersion() {
-		return version;
-	}
+    public String getCreateUserName() {
+        return this.createUserName;
+    }
 
-	public void setVersion(Integer version) {
-		this.version = version;
-	}
+    public void setCreateUserName(String createUserName) {
+        this.createUserName = createUserName;
+    }
 
-	public String getIsDelete() {
-		return isDelete;
-	}
+    public int getIsActive() {
+        return this.isActive;
+    }
 
-	public void setIsDelete(String isDelete) {
-		this.isDelete = isDelete;
-	}
+    public void setIsActive(int isActive) {
+        this.isActive = isActive;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public String getIsDelete() {
+        return this.isDelete;
+    }
 
-	public CoreUser setCreateTime(Date createTime) {
-		this.createTime = createTime;
-		return this;
-	}
+    public void setIsDelete(String isDelete) {
+        this.isDelete = isDelete;
+    }
 
-	public Long getCreateUserId() {
-		return createUserId;
-	}
+    public int getPlatform() {
+        return this.platform;
+    }
 
-	public void setCreateUserId(Long createUserId) {
-		this.createUserId = createUserId;
-	}
+    public void setPlatform(int platform) {
+        this.platform = platform;
+    }
 
-	public String getCreateUserName() {
-		return createUserName;
-	}
+    public Date getUpdateTime() {
+        return this.updateTime;
+    }
 
-	public void setCreateUserName(String createUserName) {
-		this.createUserName = createUserName;
-	}
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public BigInteger getUpdateUserId() {
+        return this.updateUserId;
+    }
+
+    public void setUpdateUserId(BigInteger updateUserId) {
+        this.updateUserId = updateUserId;
+    }
+
+    public String getUpdateUserName() {
+        return this.updateUserName;
+    }
+
+    public void setUpdateUserName(String updateUserName) {
+        this.updateUserName = updateUserName;
+    }
+
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserPwd() {
+        return this.userPwd;
+    }
+
+    public void setUserPwd(String userPwd) {
+        this.userPwd = userPwd;
+    }
+
+    public int getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
 
 }

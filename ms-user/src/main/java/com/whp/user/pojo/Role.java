@@ -12,8 +12,8 @@ public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long roleId;
-	@Column(columnDefinition="角色名称")
+	@Column(columnDefinition="varchar(20) comment '角色名称'")
 	private String roleName;
-	@Column(columnDefinition="创建人id")
+	@Column(columnDefinition="varchar(20) comment '创建人id'")
 	private long createUserId;
 }

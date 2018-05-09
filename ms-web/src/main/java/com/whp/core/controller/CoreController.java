@@ -20,7 +20,7 @@ public class CoreController {
 	    user.setUserName("wuhp");
 	    user.setPlatform(1);
 	    user.setUpdateTime(new Date());
-	    user.setUpdateUserId(1l);
+//	    user.setUpdateUserId(1l);
 	    user.setUserName("whp");
 	    user.setVersion(1);
 	    user.setIsDelete("1");

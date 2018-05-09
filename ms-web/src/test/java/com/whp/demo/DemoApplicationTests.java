@@ -1,8 +1,6 @@
 package com.whp.demo;
 
 import java.util.Date;
-import java.util.List;
-import java.util.concurrent.Future;
 
 import javax.annotation.Resource;
 
@@ -33,10 +31,6 @@ import com.whp.async.AsysncTheadTaskService;
 import com.whp.config.properties.SystemBaseProperties;
 import com.whp.core.pojo.CoreUser;
 import com.whp.core.repository.CoreUserRepository;
-import com.whp.user.pojo.TDept;
-import com.whp.user.pojo.User;
-import com.whp.user.repository.DeptRepository;
-import com.whp.user.repository.UserRepository;
 
 /**
  * 
@@ -57,10 +51,6 @@ public class DemoApplicationTests {
 	private WebApplicationContext context;
 	private MockMvc mvc;
 	private String httpHeader = "http://localhost:8080";
-	@Autowired
-	private UserRepository userRepository;
-	@Autowired
-	private DeptRepository deptRepository;
 	@Autowired
 	private CoreUserRepository coreUserRepository;
 	
@@ -97,66 +87,6 @@ public class DemoApplicationTests {
 		sendeHttpTest(uri);
 	}
 
-	@Test
-	public void getUser() {
-		log.debug("======================22");
-		User user = new User();
-		user.setEmail("qq.com");
-		user.setUserName("whp");
-		user.setPwd("123");
-		userRepository.save(user);
-	}
-
-	@Test
-	public void test() throws Exception {
-		try {
-			User u1 = userRepository.findByUserName("whp");
-			System.out.println("第一次查询：" + u1.getEmail());
-
-			userRepository.updateUser("11222.1m", "whp");
-
-			User u2 = userRepository.findByUserName("whp");
-			System.out.println("第二次查询：" + u2.getEmail());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	/**
-	 * 测试异步线程
-	 */
-	@Test
-	public void testAsync() {
-		try {
-
-			//for (int i = 0; i < 10; i++) {
-				Future<String> f = asysncTheadTaskService.asyncInvokeReturnFuture(1);
-			//}
-				while (f.isDone()) {
-					log.info("线程执行完毕");
-					Thread.sleep(1000);
-				}
-			if (f.isDone()) {
-				log.info("所有线程完成。。。。");
-			} else {
-				log.info("线程未完全。。。。");
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-	@Test
-    public void jpaTest(){
-        List<TDept> list=deptRepository.findAll();
-        System.out.println(list.size());
-        
-        long i=deptRepository.count();
-        TDept tDept =new TDept();
-        tDept.setDeptName11("1111");
-        deptRepository.save(tDept);
-        System.out.println("长度=="+i);
-    }
 	
 	@Test
 	@Rollback(false)
@@ -166,11 +96,11 @@ public class DemoApplicationTests {
 			    user.setUserName("wuhp"+i);
 			    user.setPlatform(1);
 			    user.setUpdateTime(new Date());
-			    user.setUpdateUserId(1l);
+//			    user.setUpdateUserId(1l);
 			    user.setUserName("whp");
 			    user.setVersion(1);
 			    user.setIsDelete("1");
-			    user.setCreateUserId(1l);
+//			    user.setCreateUserId(1l);
 			    user.setCreateUserName("xx");
 			    user.setUpdateUserName("yyy");
 			    user.setUserPwd("123qwe");
@@ -194,7 +124,7 @@ public class DemoApplicationTests {
 	@Test
 	public void updateUserTest(){
 		CoreUser user =new CoreUser();
-		user.setUserId(1l);
+//		user.setUserId(1l);
 		user.setUserName("xxxxxxxxxxxxxxxxxxxxxx");
 		coreUserRepository.save(user);
 	}
