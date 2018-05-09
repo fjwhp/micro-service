@@ -63,6 +63,7 @@
 		<module>ms-core</module>
 		<module>ms-web</module>
 		<module>ms-coder</module>
+		<module>ms-jpa-tool</module>
 	</modules>
 	<!-- 模块引入 end -->
 
