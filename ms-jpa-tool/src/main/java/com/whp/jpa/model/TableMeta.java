@@ -1,4 +1,4 @@
-package com.able.model;
+package com.whp.jpa.model;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.able.consts.Consts;
+import com.whp.jpa.Consts;
 
 /**
  * 表结构信息

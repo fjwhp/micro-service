@@ -1,4 +1,4 @@
-package com.able.db;
+package com.whp.jpa.db;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.able.consts.Consts;
-import com.able.model.ColumnMeta;
-import com.able.model.TableMeta;
+import com.whp.jpa.Consts;
+import com.whp.jpa.model.ColumnMeta;
+import com.whp.jpa.model.TableMeta;
 /**
  * 解析表结构
  * @author  zhanglikun

@@ -1,4 +1,4 @@
-package com.able;
+package com.whp;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,9 +7,9 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.able.consts.Consts;
-import com.able.db.AnalysisDB;
-import com.able.model.TableMeta;
+import com.whp.jpa.Consts;
+import com.whp.jpa.db.AnalysisDB;
+import com.whp.jpa.model.TableMeta;
 
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;

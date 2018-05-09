@@ -1,4 +1,4 @@
-package com.able.consts;
+package com.whp.jpa;
 
 /**
  * 

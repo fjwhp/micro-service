@@ -1,8 +1,9 @@
-package com.able.db;
+package com.whp.jpa.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import com.able.consts.Consts;
+
+import com.whp.jpa.Consts;
 /**
  * 
  * @描述：创建数据库连接

@@ -1,4 +1,4 @@
-package com.able.model;
+package com.whp.jpa.model;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
 /**
