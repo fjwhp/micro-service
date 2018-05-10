@@ -71,6 +71,7 @@
 		<module>ms-eureka-server</module>
 		<module>ms-eureka-client</module>
 		<module>ms-consul-client</module>
+		<module>ms-eureka-consumer</module>
 	</modules>
 	<!-- 模块引入 end -->
 
