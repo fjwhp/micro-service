@@ -2,6 +2,7 @@ package com.whp.consul.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,11 @@ public class DcController {
 
     @RequestMapping("/home")
     public Object home() {
+        System.out.println("1111111111111");
+        return "OK11";
+    }
+    @GetMapping("/dc")
+    public Object dc() {
         System.out.println("1111111111111");
         return "OK11";
     }
