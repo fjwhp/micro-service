@@ -1,4 +1,4 @@
-package com.whp.base.aop;
+package com.whp.core.aop;
 
 import java.util.Arrays;
 
