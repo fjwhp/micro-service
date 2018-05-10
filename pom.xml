@@ -69,7 +69,7 @@
 
 		<!-- spring cloud -->
 		<module>ms-eureka-server</module>
-
+		<module>ms-eureka-client</module>
 	</modules>
 	<!-- 模块引入 end -->
 
