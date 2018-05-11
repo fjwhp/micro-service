@@ -1,9 +1,11 @@
 package com.whp.eureka.consumer.feignclient;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 
@@ -29,5 +31,8 @@ public interface EurekaClientInterface {
     @RequestMapping(method = RequestMethod.GET,value = "/dc")
     String consumer();
 
+    @RequestMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE,method=RequestMethod.POST)
+    String handleFileUpload(@RequestPart(value = "file") MultipartFile file);
+    
     
 }

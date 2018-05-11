@@ -7,7 +7,8 @@ import org.springframework.web.client.RestTemplate;
 
 import feign.Contract;
 import feign.Logger;
-import feign.auth.BasicAuthRequestInterceptor;
+import feign.codec.Encoder;
+import feign.form.spring.SpringFormEncoder;
 
 @Configuration
 public class Config {
@@ -28,10 +29,8 @@ public class Config {
     }
 
     @Bean
-
-    public BasicAuthRequestInterceptor getBasicAuthRequestInterceptor() {
-
-        return new BasicAuthRequestInterceptor("gwolf", "gwolf");
-
+    public Encoder feignFormEncoder() {
+        return new SpringFormEncoder();
     }
+
 }
