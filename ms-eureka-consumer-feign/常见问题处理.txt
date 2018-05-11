@@ -1,0 +1,5 @@
+1  Method generatePassword not annotated with HTTP method type (ex. GET, POST) 异常
+把@PostMapping 替换成 @RequestMapping( method = RequestMethod.POST/GET) 
+@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)  
+
+参考 https://www.cnblogs.com/yueli/p/7478305.html
