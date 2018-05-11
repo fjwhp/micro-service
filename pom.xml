@@ -74,6 +74,7 @@
 		<module>ms-consul-client</module>
 		<module>ms-eureka-consumer</module>
 		<module>ms-eureka-consumer-ribbon</module>
+		<module>ms-eureka-consumer-feign</module>
 	</modules>
 	<!-- 模块引入 end -->
 
