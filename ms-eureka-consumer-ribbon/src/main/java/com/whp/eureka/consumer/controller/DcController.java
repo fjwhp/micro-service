@@ -10,17 +10,14 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class DcController {
 
-	@Autowired
-	LoadBalancerClient loadBalancerClient;
-	@Autowired
-	RestTemplate restTemplate;
+    @Autowired
+    RestTemplate restTemplate;
 
-	@GetMapping("/consumer")
-	public String dc() {
-		
-		ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client");
-		String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/dc";
-		System.out.println("调用我=="+url);
-		return restTemplate.getForObject(url, String.class);
-	}
+    @GetMapping("/consumer")
+    public String dc() {
+
+        String url = "http://eureka-client/dc";
+        System.out.println("调用我==" + url);
+        return restTemplate.getForObject(url, String.class);
+    }
 }
