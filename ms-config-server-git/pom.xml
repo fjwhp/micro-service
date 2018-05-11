@@ -7,14 +7,18 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>ms-config-server-git</artifactId><!--  此处需要修改名称-->
+	<artifactId>ms-config-server-git</artifactId><!-- 此处需要修改名称 -->
 	<packaging>jar</packaging>
 
-	<name>ms-config-server-git</name><!--  此处需要修改名称-->
+	<name>ms-config-server-git</name><!-- 此处需要修改名称 -->
 	<url>http://maven.apache.org</url>
-  <!--######################################-->
-  <dependencies>
-	
-  </dependencies>
+	<!--###################################### -->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
+
+	</dependencies>
 
 </project>
