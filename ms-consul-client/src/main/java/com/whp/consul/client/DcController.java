@@ -13,12 +13,12 @@ public class DcController {
 
     @RequestMapping("/home")
     public Object home() {
-        System.out.println("1111111111111");
+        logger.info("==home===");
         return "OK11";
     }
     @GetMapping("/dc")
     public Object dc() {
-        System.out.println("1111111111111");
+        logger.info("==dc===");
         return "OK11";
     }
 
