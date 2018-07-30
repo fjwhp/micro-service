@@ -79,6 +79,8 @@
 		<module>ms-eureka-consumer-feign</module>
 		<module>ms-config-server-git</module>
 		<module>ms-config-client</module>
+		<module>ms-consul-client</module>
+		
 	</modules>
 	<!-- 模块引入 end -->
 
