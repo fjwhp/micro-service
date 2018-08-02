@@ -71,6 +71,8 @@
 
 		<!-- spring cloud -->
 		<module>ms-eureka-server</module>
+		<module>ms-eureka-server-cluster2</module>
+		<module>ms-eureka-server-cluster3</module>
 		<module>ms-eureka-client</module>
 		<module>ms-eureka-client-bak</module>
 		<module>ms-consul-client</module>
