@@ -1,0 +1,1 @@
+1	在eclipse-->>run configurations-->> 配置 Arguments -->>  --spring.profiles.active=cluster(对应的版本配置文件)
