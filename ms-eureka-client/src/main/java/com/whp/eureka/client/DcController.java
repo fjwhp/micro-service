@@ -13,7 +13,6 @@ public class DcController {
     private static Logger logger = LoggerFactory.getLogger(DcController.class);
     @Autowired
     DiscoveryClient discoveryClient;
-    //@RequestMapping(value = "/dc", method = RequestMethod.GET)
     @GetMapping("/dc")
     public String dc() {
         String services = "Services: " + discoveryClient.getServices();

@@ -10,16 +10,15 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 public class UploadController {
 
-    //@PostMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    @RequestMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE,method=RequestMethod.POST)
-    public String handleFileUpload(@RequestPart(value = "file") MultipartFile file) {
-        
-        return file.getName();
-        
-        
-    }
-    @RequestMapping(value = "/junitTest")
-    public String  junitTest(){
-        return "junttest";
-    }
+	@RequestMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, method = RequestMethod.POST)
+	public String handleFileUpload(@RequestPart(value = "file") MultipartFile file) {
+
+		return file.getName();
+
+	}
+
+	@RequestMapping(value = "/junitTest")
+	public String junitTest() {
+		return "junttest";
+	}
 }
