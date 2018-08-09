@@ -82,8 +82,8 @@
 		<module>ms-consul-server</module>
 		
 		<!-- demo module -->
-		<module>ms-provider-server</module>
-		<module>ms-consumer-server</module>
+		<module>ms-provider-demo</module>
+		<module>ms-consumer-demo</module>
 	</modules>
 	<!-- 模块引入 end -->
 
