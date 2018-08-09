@@ -83,6 +83,9 @@
 		<module>ms-config-client</module>
 		<module>ms-consul-server</module>
 		
+		<!-- demo module -->
+		<module>ms-provider-server</module>
+		<module>ms-consumer-server</module>
 	</modules>
 	<!-- 模块引入 end -->
 
