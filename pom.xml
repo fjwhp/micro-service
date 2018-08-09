@@ -84,6 +84,8 @@
 		<!-- demo module -->
 		<module>ms-provider-demo</module>
 		<module>ms-consumer-demo</module>
+		<module>ms-interface-demo</module>
+		
 	</modules>
 	<!-- 模块引入 end -->
 
