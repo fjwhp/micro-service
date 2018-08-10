@@ -28,7 +28,7 @@ public interface EurekaClientInterface {
      *
      * @时间：2018年5月11日 上午9:43:08
      */
-    @RequestMapping(method = RequestMethod.GET,value = "/dc")
+    @RequestMapping(method = RequestMethod.POST,value = "/dc")
     String consumer();
 
     @RequestMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE,method=RequestMethod.POST)
