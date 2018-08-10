@@ -82,9 +82,9 @@
 		<module>ms-consul-server</module>
 		
 		<!-- demo module -->
-		<module>ms-provider-demo</module>
-		<module>ms-consumer-demo</module>
-		<module>ms-interface-demo</module>
+		<module>ms-demo-api</module>
+		<module>ms-demo-service</module>
+		<module>ms-demo-feign</module>
 		
 	</modules>
 	<!-- 模块引入 end -->
