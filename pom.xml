@@ -86,6 +86,7 @@
 		<module>ms-demo-service</module>
 		<module>ms-demo-feign</module>
 		<module>ms-demo-dao</module>
+		<module>ms-demo-entity</module>
 		
 	</modules>
 	<!-- 模块引入 end -->
