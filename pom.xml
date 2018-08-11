@@ -80,6 +80,7 @@
 		<module>ms-config-server-git</module>
 		<module>ms-config-client</module>
 		<module>ms-consul-server</module>
+		<module>ms-admin</module>
 		
 		<!-- demo module -->
 		<module>ms-demo-api</module>
