@@ -51,6 +51,7 @@
 		<org.springframework.cloud.version>Camden.SR7</org.springframework.cloud.version>
 		<commons-fileupload.version>1.3.3</commons-fileupload.version>
 		<io.github.openfeign.form.feign-form-spring.version>3.0.3</io.github.openfeign.form.feign-form-spring.version>
+		<spring-boot-admin-server.version>1.4.6</spring-boot-admin-server.version>
 
 	</properties>
 	<!-- 模块引入 start -->
