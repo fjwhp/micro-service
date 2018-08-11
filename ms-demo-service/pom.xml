@@ -7,14 +7,36 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>ms-demo-service</artifactId><!--  此处需要修改名称-->
+	<artifactId>ms-demo-service</artifactId><!-- 此处需要修改名称 -->
 	<packaging>jar</packaging>
 
-	<name>ms-demo-service</name><!--  此处需要修改名称-->
+	<name>ms-demo-service</name><!-- 此处需要修改名称 -->
 	<url>http://maven.apache.org</url>
-  <!--######################################-->
-  <dependencies>
-	
-  </dependencies>
+	<!--###################################### -->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.whp</groupId>
+			<artifactId>ms-demo-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.whp</groupId>
+			<artifactId>ms-demo-dao</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
 </project>
