@@ -34,10 +34,9 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
-		<!-- 引进api工程仅仅是为了，同步feign端的dto和 api 的dto-->
 		<dependency>
 			<groupId>com.whp</groupId>
-			<artifactId>ms-demo-api</artifactId>
+			<artifactId>ms-demo-entity</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

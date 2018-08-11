@@ -14,7 +14,11 @@
 	<url>http://maven.apache.org</url>
   <!--######################################-->
   <dependencies>
-	
+	  <dependency>
+	  	<groupId>com.whp</groupId>
+	  	<artifactId>ms-demo-entity</artifactId>
+	  	<version>${project.version}</version>
+	  </dependency>
   </dependencies>
 
 </project>

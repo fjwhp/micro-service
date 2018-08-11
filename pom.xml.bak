@@ -33,7 +33,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<org.springframework.boot.version>1.4.2.RELEASE</org.springframework.boot.version>
+		<org.springframework.boot.version>1.5.2.RELEASE</org.springframework.boot.version>
 		<springfox-swagger2.version>2.2.2</springfox-swagger2.version>
 		<mysql.version>5.1.21</mysql.version>
 		<com.alibaba.fastjson.version>1.2.40</com.alibaba.fastjson.version>
@@ -49,6 +49,8 @@
 		<com.baomidou.mybatis-plus.version>2.2.0</com.baomidou.mybatis-plus.version>
 		<org.apache.velocity.version>1.7</org.apache.velocity.version>
 		<org.springframework.cloud.version>Camden.SR7</org.springframework.cloud.version>
+		<commons-fileupload.version>1.3.3</commons-fileupload.version>
+		<io.github.openfeign.form.feign-form-spring.version>3.0.3</io.github.openfeign.form.feign-form-spring.version>
 
 	</properties>
 	<!-- 模块引入 start -->
@@ -70,7 +72,22 @@
 		<!-- spring cloud -->
 		<module>ms-eureka-server</module>
 		<module>ms-eureka-client</module>
+		<module>ms-eureka-client-bak</module>
 		<module>ms-consul-client</module>
+		<module>ms-eureka-consumer</module>
+		<module>ms-eureka-consumer-ribbon</module>
+		<module>ms-eureka-consumer-feign</module>
+		<module>ms-config-server-git</module>
+		<module>ms-config-client</module>
+		<module>ms-consul-server</module>
+		
+		<!-- demo module -->
+		<module>ms-demo-api</module>
+		<module>ms-demo-service</module>
+		<module>ms-demo-feign</module>
+		<module>ms-demo-dao</module>
+		<module>ms-demo-entity</module>
+		
 	</modules>
 	<!-- 模块引入 end -->
 
@@ -146,11 +163,7 @@
 				<version>${org.apache.pdfbox.pdfbox.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>org.apache.poi</groupId>
-				<artifactId>poi-scratchpad</artifactId>
-				<version>${poi.version}</version>
-			</dependency>
+		
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi</artifactId>
@@ -188,6 +201,21 @@
 				<version>${org.springframework.cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.github.openfeign.form</groupId>
+				<artifactId>feign-form</artifactId>
+				<version>${io.github.openfeign.form.feign-form-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.github.openfeign.form</groupId>
+				<artifactId>feign-form-spring</artifactId>
+				<version>${io.github.openfeign.form.feign-form-spring.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

@@ -22,6 +22,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <dependency>
+        	<groupId>com.whp</groupId>
+        	<artifactId>ms-demo-entity</artifactId>
+        	<version>${project.version}</version>
+        </dependency>
   </dependencies>
 
 </project>
