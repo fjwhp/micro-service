@@ -44,11 +44,11 @@
 		<appender-ref ref="CONSOLE" />
 	</root>
 	<!-- ERROR级别以上的日志 -->
-	<logger name="whp" level="ERROR" additivity="true">
+	<logger name="ms-whp" level="ERROR" additivity="true">
 		<appender-ref ref="LOG_ERROR" />
 	</logger>
 	<!-- INFO级别以上的日志 -->
-	<logger name="whp" level="INFO" additivity="true">
+	<logger name="ms-whp" level="INFO" additivity="true">
 		<appender-ref ref="LOGS" />
 	</logger>
 
