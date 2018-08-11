@@ -82,6 +82,7 @@
 		<module>ms-config-client</module>
 		<module>ms-consul-server</module>
 		<module>ms-admin</module>
+		<module>ms-config-mybatis</module>
 		
 		<!-- demo module -->
 		<module>ms-demo-api</module>
