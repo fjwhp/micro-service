@@ -1,0 +1,11 @@
+CREATE TABLE `表名` (
+  `sid` int(32) NOT NULL COMMENT '主键',
+  `create_by` int(11) NOT NULL COMMENT '创建者id',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_by` int(11) NOT NULL COMMENT '修改者id',
+  `update_time` datetime NOT NULL COMMENT '修改时间',
+  `version` int(20) NOT NULL DEFAULT '0' COMMENT '版本号',
+  `delete_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除，（1是，0否）',
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

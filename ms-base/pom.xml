@@ -7,14 +7,40 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>ms-base</artifactId><!--  此处需要修改名称-->
+	<artifactId>ms-base</artifactId><!-- 此处需要修改名称 -->
 	<packaging>jar</packaging>
 
-	<name>ms-base</name><!--  此处需要修改名称-->
+	<name>ms-base</name><!-- 此处需要修改名称 -->
 	<url>http://maven.apache.org</url>
-  <!--######################################-->
-  <dependencies>
-	    
-  </dependencies>
+	<!--###################################### -->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>tomcat-jdbc</artifactId>
+					<groupId>org.apache.tomcat</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox-swagger2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>

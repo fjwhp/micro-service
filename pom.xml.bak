@@ -48,7 +48,7 @@
 		<org.apache.pdfbox.pdfbox.version>1.8.13</org.apache.pdfbox.pdfbox.version>
 		<org.apache.xmlbeans.xmlbeans.version>2.6.0</org.apache.xmlbeans.xmlbeans.version>
 		<org.projectlombok.lombok-maven.version>1.16.10</org.projectlombok.lombok-maven.version>
-		<mybatis-plus-boot-starter.version>3.0-RC1</mybatis-plus-boot-starter.version>
+		<mybatis-plus-boot-starter.version>2.3</mybatis-plus-boot-starter.version>
 		<org.apache.velocity.version>1.7</org.apache.velocity.version>
 		<!-- Camden.SR7  Edgware.SR4-->
 		<org.springframework.cloud.version>Edgware.SR4</org.springframework.cloud.version>
@@ -72,6 +72,7 @@
 		<module>ms-web</module>
 		<module>ms-coder</module>
 		<module>ms-jpa-tool</module>
+		<module>ms-base</module>
 
 		<!-- spring cloud -->
 		<module>ms-eureka-server</module>
@@ -116,6 +117,11 @@
 			<dependency>
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger2</artifactId>
+				<version>${springfox-swagger2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-annotations</artifactId>
 				<version>${springfox-swagger2.version}</version>
 			</dependency>
 			<dependency>
