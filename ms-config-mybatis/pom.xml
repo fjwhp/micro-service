@@ -22,19 +22,35 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
-		<!-- mybatis plus  start -->
+		<!-- mybatis plus start -->
+		<dependency>
+			<groupId>com.whp</groupId>
+			<artifactId>ms-config</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- mybatis-plus begin -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
-			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-			<version>${mybatis-plus-boot-starter.version}</version>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>tomcat-jdbc</artifactId>
+					<groupId>org.apache.tomcat</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-		 <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus-boot-starter.version}</version>
-        </dependency>
-        
-        <!-- mybatis plus  end -->
+		<!-- mybatis-plus end -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+		</dependency>
+
+		<!-- mybatis plus end -->
 
 	</dependencies>
 
