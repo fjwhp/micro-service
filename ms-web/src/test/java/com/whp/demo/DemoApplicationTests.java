@@ -28,7 +28,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.whp.async.AsysncTheadTaskService;
-import com.whp.config.properties.SystemBaseProperties;
 import com.whp.core.pojo.CoreUser;
 import com.whp.core.repository.CoreUserRepository;
 
@@ -71,22 +70,18 @@ public class DemoApplicationTests {
 	 * 
 	 */
 	@Autowired
-	SystemBaseProperties pro;
-	@Autowired
 	AsysncTheadTaskService asysncTheadTaskService;
 
-	@Test
-	public void getProperty() {
-
-		System.out.println(pro.getProjectName());
-	}
 
 	@Test
 	public void getHello() throws Exception {
 		String uri = "/hello";
 		sendeHttpTest(uri);
 	}
-
+	@Test
+	public void asynTest(){
+		asysncTheadTaskService.asyncInvokeSimplest();
+	}
 	
 	@Test
 	@Rollback(false)
