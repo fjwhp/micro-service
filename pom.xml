@@ -72,6 +72,7 @@
 		<module>ms-web</module>
 		<module>ms-coder</module>
 		<module>ms-jpa-tool</module>
+		<module>ms-base</module>
 
 		<!-- spring cloud -->
 		<module>ms-eureka-server</module>
