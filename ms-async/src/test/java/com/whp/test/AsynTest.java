@@ -31,10 +31,12 @@ public class AsynTest {
 	@Before
 	public void setupMvc() throws Exception {
 		mvc = MockMvcBuilders.webAppContextSetup(context).build();
+		mvc.toString();
 	}
 	
 	@Test
 	public void testAsyn(){
+		log.debug("");
 		asysncTheadTaskService.asyncInvokeSimplest();
 	}
 }

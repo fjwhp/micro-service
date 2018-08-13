@@ -28,9 +28,9 @@ public class MpGenerator {
 
 	public static void makeCode() {
 		// 模块名
-		String moduleName = "user";
+		String moduleName = "demo";
 		// 表名
-		String[] tableName = new String[] { "aut_user"};
+		String[] tableName = new String[] { "demo_user"};
 		// String[] tableName = new String[] { "aut_user" };
 		AutoGenerator mpg = new AutoGenerator();
 		// 全局配置
@@ -95,7 +95,7 @@ public class MpGenerator {
 		pc.setParent("com.whp");
 
 		pc.setController("web.controller");
-		pc.setEntity("dao.entity");
+		pc.setEntity("entity");
 		pc.setMapper("dao.mapper");
 		pc.setXml("dao.mapper.xml");
 		pc.setModuleName(moduleName);

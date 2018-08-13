@@ -24,7 +24,8 @@ import freemarker.template.TemplateException;
  * @时间：2018年5月9日 下午9:14:59
  */
 public class GenerateMain {
-    public static void main(String[] args) throws IOException, TemplateException {
+    @SuppressWarnings("deprecation")
+	public static void main(String[] args) throws IOException, TemplateException {
         
         List<TableMeta> tableList ;
         Writer out = null ;

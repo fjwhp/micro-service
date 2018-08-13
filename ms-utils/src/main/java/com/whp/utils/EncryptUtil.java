@@ -34,6 +34,7 @@ import org.springframework.security.crypto.password.StandardPasswordEncoder;
  * 
  * @时间：2018年3月19日 下午2:21:42
  */
+@SuppressWarnings("deprecation")
 public class EncryptUtil {
   
   private final static Logger logger = LoggerFactory.getLogger(EncryptUtil.class);
@@ -41,7 +42,7 @@ public class EncryptUtil {
    * 加密密钥
    */
   private static final String SITE_WIDE_SECRET = "http://www.forever87.com/";
-  private static final PasswordEncoder encoder = new StandardPasswordEncoder(SITE_WIDE_SECRET);
+private static final PasswordEncoder encoder = new StandardPasswordEncoder(SITE_WIDE_SECRET);
 
   public static final String ALGORITHM_MODE = "DES";
   public static final String ALGORITHM_DES = "DES/CBC/PKCS5Padding";

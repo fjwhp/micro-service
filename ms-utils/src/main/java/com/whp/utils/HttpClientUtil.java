@@ -41,6 +41,7 @@ import org.apache.http.util.EntityUtils;
  * 
  * @时间：2018年3月22日 上午11:09:35
  */
+@SuppressWarnings("deprecation")
 public class HttpClientUtil {
 
 	// utf-8字符编码

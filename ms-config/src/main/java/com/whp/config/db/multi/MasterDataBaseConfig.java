@@ -1,7 +1,6 @@
 package com.whp.config.db.multi;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 import com.whp.config.db.DataBaseConfig;
 /**
